@@ -1,0 +1,12 @@
+name: HandyDandy
+title: HandyDandy
+username:
+account: bingo-lahaye
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 946630
+bundleId: 2105460
+url: https://bingo-lahaye.shinyapps.io/HandyDandy/
+when: 1558668993.64177
+asMultiple: FALSE
+asStatic: FALSE
