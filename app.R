@@ -38,6 +38,7 @@ ui <- fluidPage(
                 textInput(label = "Enter ending location", inputId = "End_LOC", placeholder = "The place you want to go"),
                 numericInput(label = "How many bikes do you need?", inputId = "BikeNumber", value = 1),
                 actionButton(label = "Full Map", inputId = "button"),
+                hr(),
                 uiOutput("dankmap")
     )
 
@@ -57,16 +58,10 @@ station_BigData <- station_DataDF %>%
     left_join(station_statusDF, by = "station_id")
 #define server
 server <- function(input, output, session) {
-  
-    output$loc <- renderPrint({
-        paste0(input$lat, ",", input$long)
-    })
-    
-    
-    output$geolocation <- renderPrint({
+    output$geolocation <- renderPrint({ #geolocation print thing
         input$geolocation
     })
-    observeEvent(input$UseLOC, {
+    observeEvent(input$UseLOC, { #event to print the current location into loc input
       x <- input$lat
       y <- input$long
       updateTextInput(session,"Home_LOC", value = paste0(x, ",", y))
