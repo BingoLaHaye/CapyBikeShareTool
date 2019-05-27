@@ -57,9 +57,7 @@ station_BigData <- station_DataDF %>%
     left_join(station_statusDF, by = "station_id")
 #define server
 server <- function(input, output, session) {
-    
-    register_google("AIzaSyDitfa2CtI_rpIbpJviZRey63D0m7N3ZMA")
-    set_key("AIzaSyDitfa2CtI_rpIbpJviZRey63D0m7N3ZMA")
+  
     output$loc <- renderPrint({
         paste0(input$lat, ",", input$long)
     })
