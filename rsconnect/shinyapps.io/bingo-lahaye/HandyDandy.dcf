@@ -5,8 +5,8 @@ account: bingo-lahaye
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 946630
-bundleId: 2111766
+bundleId: 2111797
 url: https://bingo-lahaye.shinyapps.io/HandyDandy/
-when: 1558981333.27903
+when: 1558982882.98426
 asMultiple: FALSE
 asStatic: FALSE
