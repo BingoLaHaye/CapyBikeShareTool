@@ -32,9 +32,9 @@ ui <- fluidPage(
         verticalLayout(
                 p(strong("Consent to use your location?")),
                 verbatimTextOutput("geolocation"),
-                p(strong("Your current location")),
-                textOutput("loc"),
-                textInput(label = "Enter Starting Address (Your location by default)", inputId = "Home_LOC", placeholder = "Where you want to go"),
+                hr(),
+                actionButton(label = "Use current location?", inputId = "UseLOC"),
+                textInput(label = "Enter Starting Address", inputId = "Home_LOC", placeholder = "Where you want to go"),
                 textInput(label = "Enter ending location", inputId = "End_LOC", placeholder = "The place you want to go"),
                 numericInput(label = "How many bikes do you need?", inputId = "BikeNumber", value = 1),
                 actionButton(label = "Full Map", inputId = "button"),
@@ -68,7 +68,7 @@ server <- function(input, output, session) {
     output$geolocation <- renderPrint({
         input$geolocation
     })
-    observeEvent(input$geolocation, {
+    observeEvent(input$UseLOC, {
       x <- input$lat
       y <- input$long
       updateTextInput(session,"Home_LOC", value = paste0(x, ",", y))
